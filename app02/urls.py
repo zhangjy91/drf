@@ -20,11 +20,12 @@ from django.conf import settings
 
 from rest_framework_jwt.views import obtain_jwt_token
 
-from app02.views import OrderView
+from app02.views import OrderView,GoodView
 
 urlpatterns = [
     path('login/', obtain_jwt_token),
     path('order/', OrderView.as_view()),
+    path('good/', GoodView.as_view()),
 
 
 ]
