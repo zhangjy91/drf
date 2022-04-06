@@ -31,9 +31,8 @@ class LoginSerializer(ModelSerializer):
             if user.check_password(password):
                 payload = jwt_payload_handler(user)
                 token= jwt_encode_handler(payload)
-                self.context['token'] =token
+                self.context['token'] = token
                 self.context['username'] = user.username
-
                 return attrs
             else:
                 raise ValidationError('密码错误')
