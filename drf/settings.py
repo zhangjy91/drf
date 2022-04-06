@@ -147,8 +147,10 @@ AUTH_USER_MODEL = 'drf_day12.user'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import datetime
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER':'app02.utils.my_jwt_response_payload_handler',
+    'JWT_EXPIRATION_DELTA':datetime.timedelta(days=7),
 }
 
 

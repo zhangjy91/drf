@@ -37,5 +37,6 @@ class MyJwtAuthentication(BaseAuthentication):
             user = User(id=payload.get('user_id'), username=payload.get('username'))
 
             return user, jwt_value
-        
+
         raise AuthenticationFailed('你没有携带认证信息')
+

@@ -20,12 +20,13 @@ from django.conf import settings
 
 from rest_framework_jwt.views import obtain_jwt_token
 
-from app02.views import OrderView,GoodView
+from app02.views import OrderView,GoodView,Login2View
 
 urlpatterns = [
     path('login/', obtain_jwt_token),
     path('order/', OrderView.as_view()),
     path('good/', GoodView.as_view()),
+    path('login2/',Login2View.as_view({'post':'login'})),
 
 
 ]
